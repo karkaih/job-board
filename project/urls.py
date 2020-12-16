@@ -18,8 +18,14 @@ from django.urls import include,path
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('Account.urls',namespace='accounts')),
+
     path('admin/', admin.site.urls),
     path('jobs/', include('Job.urls',namespace='jobs')),
+    path('contact-us/', include('Contact.urls',namespace='contact-us')),
+
+
 
 ]
 
