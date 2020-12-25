@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 # Create your models here.
 '''
 django  model field :
@@ -30,6 +31,7 @@ class Job(models.Model):#Table
     experience = models.IntegerField(default=1)
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     images  = models.ImageField(upload_to=image_upload)
+    #images = ResizedImageField(size=[70, 200],quality=75, upload_to=image_upload)
     slug = models.SlugField(blank=True ,null=True)
 
 
