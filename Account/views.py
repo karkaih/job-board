@@ -10,13 +10,15 @@ def signup(request) :
         form = SignupForm(request.POST)
         print("HI BRO")
         if form.is_valid:
-
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            user = authenticate(username=username,password=password)
-            login(request,user)
-            return redirect('/accounts/profile')
+            try :
+                form.save()
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password1']
+                user = authenticate(username=username,password=password)
+                login(request,user)
+                return redirect('/accounts/profile')
+            except Exception :
+                pass
     else :
         form =SignupForm()
 

@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>{{jobs.count}}+ <!--jobs|lenght--> Jobs Available</h3>
+                        <h3> {{job_list.count}}  + <!--jobs|lenght--> Jobs Available</h3>
                     </div>
                 </div>
             </div>
@@ -62,9 +62,9 @@
                                         <div class="jobs_conetent">
                                             <a href="{%url 'jobs:jobdetail' job.slug%}"><h4>{{job.title}}</h4></a>
                                             <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
+                                                <!--<div class="location">
                                                     <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
+                                                </div>-->
                                                 <div class="location">
                                                     <p> <i class="fa fa-clock-o"></i> {{job.job_type}}</p>
                                                 </div>
