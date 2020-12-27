@@ -5,7 +5,19 @@ from .form import ApplyForm ,JobForm
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .filters import JobFilter
+#from django.http import HttpResponse
+
 # Create your views here.
+
+
+
+'''
+#custom  error page
+def error_404_view(request, exception):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request,'myapp/error_404.html', data)'''
+
+
 
 def job_list(request) :
     job_list= Job.objects.all()
